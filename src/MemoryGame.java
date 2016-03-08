@@ -11,21 +11,27 @@
  */
 public class MemoryGame
 {
-	
-	// TODO update comment (what is a "ready to be played" game?)
+	private Cards[][] grids=null;
+	// TODO update comment (what is a "ready to be played" game?)(done)
 	/**
-	 * Creates a new Memory game, ready to be played (explain the attributes)
+	 * Creates a new Memory game, with their cards initiate on a board. (explain the attributes)
 	 */
 	public MemoryGame()
 	{	
 		// TODO write code
+		for(int i=0;i<grids.length;i++){
+			int j;
+				for(j=0;j<grids[i].length;j++){
+					Cards card = new Cards();
+				}
+		}
 	}
 	
-	// TODO rename this method (ask for advice) 
+	// TODO rename this method (ask for advice)(done)
 	/**
-	 * playGame is a method which represents a game being played by the user.
+	 * play is a method which represents a game being played by the user.
 	 */
-	public void playGame()
+	public void play()
 	{
 		// TODO write code
 		
