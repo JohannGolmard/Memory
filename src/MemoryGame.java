@@ -11,10 +11,7 @@
  */
 public class MemoryGame
 {
-	/**
-	 * the attributes grids represents the grid where the cards are placed.
-	 */
-	public Cards[] grids= null;
+	
 	
 	
 	/**
