@@ -11,25 +11,23 @@
  */
 public class MemoryGame
 {
-	/**
-	 * the attributes grids represents the grid where the cards are placed.
-	 */
-	public Cards[] grids= null;
 	
-	
+	// TODO update comment (what is a "ready to be played" game?)
 	/**
 	 * Creates a new Memory game, ready to be played (explain the attributes)
 	 */
 	public MemoryGame()
-	{
-		
+	{	
+		// TODO write code
 	}
+	
+	// TODO rename this method (ask for advice) 
 	/**
 	 * playGame is a method which represents a game being played by the user.
 	 */
 	public void playGame()
 	{
-		// TODO Auto-generated method stub
+		// TODO write code
 		
 	}
 
