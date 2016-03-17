@@ -1,3 +1,5 @@
+import java.util.Random;
+
 // TODO fix comment (ask for advice)
 /**
  * This class represents a Memory game.
@@ -12,22 +14,28 @@
  */
 public class MemoryGame
 {
-	// TODO just declare field, do not initialize it (do it in constructor)
-	private Cards[][] grids=null;
 	
-	// TODO detail comment (how are cards?)
+	
 	/**
-	 * Creates a new Memory game, with their cards initiate on a board. (explain the attributes)
+	 * game board ()
+	 */
+	private Board board;
+
+	// TODO detail comment (how are cards?)(done)
+	/**
+	 * Creates a new Memory game, with a standard board with randomly placed cards (hidden side) 
+	 * (explain the attributes)
+	 * 
 	 */
 	public MemoryGame()
 	{	
-		// TODO rename loop variables
-		for(int i=0;i<grids.length;i++){
-			int j;
-				for(j=0;j<grids[i].length;j++){
-					Cards card = new Cards();
-				}
-		}
+		// TODO rename loop variables(done)
+		/**
+		 * Initiate the board with cards on each cell.
+		 */
+		this.board = new Board();
+
+		
 	}
 	
 	// TODO rename this method (ask for advice)(done)
