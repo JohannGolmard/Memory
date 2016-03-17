@@ -1,24 +1,19 @@
-// TODO update README.md (what/who)(done)
 
-// TODO rename this class (not compliant with coding conventions)(done)
-// TODO write comment(done)
 /**
- * Memory is a class which represents the application of the game Memory
+ * Application that launches a Memory game
  * @author golmardj
  *
  */
 public class Memory
 {
 
-	
+	/**
+	 * Application's main
+	 * @param args command-line arguments (unused)
+	 */
 	public static void main(String[] args)
-	{
-		// TODO write comment(done)
-		/**
-		 * MemoryGame is an instance of the game which can be initiate by playGame.
-		 */
-		new MemoryGame().play();
-			
+	{	
+		new MemoryGame().play();		
 	}
 
 }

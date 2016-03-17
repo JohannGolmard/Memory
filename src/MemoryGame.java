@@ -1,5 +1,6 @@
+// TODO fix comment (ask for advice)
 /**
- *This class represents a Memory game.
+ * This class represents a Memory game.
  * MemoryGame is a game from Memory which is ready to play, the cards was placed on a grid,
  * on the hidden side. The player has a timer that start from 0 and stop 
  * when the player win the game.
@@ -11,14 +12,16 @@
  */
 public class MemoryGame
 {
+	// TODO just declare field, do not initialize it (do it in constructor)
 	private Cards[][] grids=null;
-	// TODO update comment (what is a "ready to be played" game?)(done)
+	
+	// TODO detail comment (how are cards?)
 	/**
 	 * Creates a new Memory game, with their cards initiate on a board. (explain the attributes)
 	 */
 	public MemoryGame()
 	{	
-		// TODO write code
+		// TODO rename loop variables
 		for(int i=0;i<grids.length;i++){
 			int j;
 				for(j=0;j<grids[i].length;j++){
