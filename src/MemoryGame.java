@@ -1,4 +1,3 @@
-import java.util.Random;
 
 /**
  * This class represents a Memory game. MemoryGame is a game from Memory which
@@ -18,17 +17,24 @@ public class MemoryGame
 	private Board board;
 
 	/**
-	 * Creates a new Memory game, with a standard board with randomly placed
-	 * cards (hidden side) (explain the attributes)
+	 * Creates a new Memory game, with a standard board
+	 * @param size  
 	 * 
 	 */
-	public MemoryGame()
+	public MemoryGame(int size)
 	{
-		// TODO do not use javadoc style comment inside code
-		/**
-		 * Initiate the board with cards on each cell.
-		 */
-		this.board = new Board();
+		// TODO do not use javadoc style comment inside code(done)
+		
+		try
+		{
+			this.board = new Board(size);
+		}
+		catch (InvalidSizeException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			size =4;
+		}
 
 	}
 
@@ -38,6 +44,7 @@ public class MemoryGame
 	public void play()
 	{
 		// TODO write code
+		
 
 	}
 

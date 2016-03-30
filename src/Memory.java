@@ -1,4 +1,4 @@
-
+import java.util.Scanner;
 /**
  * Application that launches a Memory game
  * @author golmardj
@@ -13,7 +13,8 @@ public class Memory
 	 */
 	public static void main(String[] args)
 	{	
-		new MemoryGame().play();		
+		new MemoryGame(4).play();
+				
 	}
 
 }

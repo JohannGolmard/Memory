@@ -1,14 +1,33 @@
 import java.util.Random;
 
-// TODO write comment
+// TODO write comment(done)
+/**
+ * This class represents a board of the Memory game. The board is filled with cards.
+ * @author golmardj
+ *
+ */
 public class Board
 {
-	// TODO write comment
+	// TODO write comment(done)
+	/**
+	 * A 2D grid of card
+	 */
 	private Cards grids[][];
 
-	// TODO write comment
-	public Board()
+	// TODO write comment(done)
+	/**
+	 * Creates a new Board with randomly placed
+	 * cards on the hidden side.
+	 * @param size 
+	 * @throws InvalidSizeException 
+	 */
+	public Board(int size)throws InvalidSizeException
 	{
+		if ((size*size) % 2 == 1)
+			throw new InvalidSizeException();
+		else
+		{
+		this.grids[size][size];
 		for (int lineIndex = 0; lineIndex < this.grids.length; lineIndex++)
 		{
 			for (int colIndex = 0; colIndex < this.grids[lineIndex].length; colIndex++)
@@ -36,5 +55,13 @@ public class Board
 			}
 		}
 	}
-
+	}
+	/**
+	 * Return the grids
+	 * @return grids
+	 */
+	public Cards[][] getGrids(){
+		return this.grids;
+	}
+	
 }
