@@ -5,7 +5,7 @@
  * @author golmardj
  *
  */
-public class Cards
+public class Card
 {	
 	/**
 	 * The default side of a card. False represents the hidden side of a card.
@@ -20,12 +20,13 @@ public class Cards
 	 * The side of the card
 	 */
 	private boolean side;
-
+	
+	
 	// TODO write comment(done)
 	/** Creates a new Card with a value and a side initiate by default.
 	 * @param nbr
 	 */
-	public Cards(int nbr)
+	public Card(int nbr)
 	{
 		this.value = nbr;
 		this.side = DEFAULT_SIDE;

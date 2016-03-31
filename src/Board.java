@@ -12,7 +12,7 @@ public class Board
 	/**
 	 * A 2D grid of card
 	 */
-	private Cards grids[][];
+	private Card grids[][];
 
 	// TODO write comment(done)
 	/**
@@ -27,7 +27,7 @@ public class Board
 			throw new InvalidSizeException();
 		else
 		{
-		this.grids[size][size];
+		this.grids = new Card[size][size];
 		for (int lineIndex = 0; lineIndex < this.grids.length; lineIndex++)
 		{
 			for (int colIndex = 0; colIndex < this.grids[lineIndex].length; colIndex++)
@@ -38,8 +38,8 @@ public class Board
 				int rnjesus = rand.nextInt(this.grids.length);
 				int r3d3 = rand.nextInt(this.grids[lineIndex].length);
 
-				Cards card1 = new Cards(rng);
-				Cards card2 = new Cards(rng);
+				Card card1 = new Card(rng);
+				Card card2 = new Card(rng);
 
 				if (!this.grids[lineIndex][colIndex].equals(card1) || !this.grids[lineIndex][colIndex].equals(card2))
 				{
@@ -56,12 +56,41 @@ public class Board
 		}
 	}
 	}
+	
 	/**
 	 * Return the grids
 	 * @return grids
 	 */
-	public Cards[][] getGrids(){
+	public Card[][] getGrids(){
 		return this.grids;
 	}
-	
+	/**
+	 * check the state of the board
+	 * @return boolean , false if the board isn't finish or true 
+	 */
+	public boolean getEndOfBoard(){
+		for(int i=0;i<this.getGrids().length;i++){
+			for(int j=0;j<this.getGrids()[i].length;j++){
+				if(!this.getGrids()[i][j].getSide())
+					return false;
+			}
+		}
+		return true;
+				
+	}
+	/**
+	 * Check the value of two cards and return if they are equals
+	 * @param line , index of line for the first card
+	 * @param col , index of column for the first card
+	 * @param line2 , index of line for the second card
+	 * @param col2 , index of column for the second card
+	 * @return boolean
+	 */
+	public boolean checkCards(int line, int col, int line2, int col2){
+		if(this.getGrids()[line][col].getValue()==this.getGrids()[line2][col2].getValue())
+			return true;
+		else
+			return false;
+			
+	}
 }

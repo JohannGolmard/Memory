@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 
 /**
  * This class represents a Memory game. MemoryGame is a game from Memory which
@@ -15,27 +17,24 @@ public class MemoryGame
 	 * game board ()
 	 */
 	private Board board;
+	
+	/**
+	 *  A timer
+	 */
+	private Timer timer;
 
 	/**
-	 * Creates a new Memory game, with a standard board
-	 * @param size  
+	 * Creates a new Memory game, with a standard board initiate by a size
+	 * @param size , the size of the board
+	 * @throws InvalidSizeException 
 	 * 
 	 */
-	public MemoryGame(int size)
+	public MemoryGame(int size) throws InvalidSizeException
 	{
 		// TODO do not use javadoc style comment inside code(done)
-		
-		try
-		{
+	
 			this.board = new Board(size);
-		}
-		catch (InvalidSizeException e)
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			size =4;
-		}
-
+			this.timer= new Timer();
 	}
 
 	/**
@@ -45,7 +44,46 @@ public class MemoryGame
 	{
 		// TODO write code
 		
+		while(!this.getBoard().getEndOfBoard()){
+			Scanner sc1 = new Scanner(System.in);
+			Scanner sc2 = new Scanner(System.in);
+			Scanner sc3 = new Scanner(System.in);
+			Scanner sc4 = new Scanner(System.in);
+			
+			int line1 = sc1.nextInt();
+			int col1 = sc2.nextInt();
+			int line2 = sc3.nextInt();
+			int col2 = sc4.nextInt();
+			
+			this.getBoard().getGrids()[line1][col1].setSide(true);
+			System.out.println("\nCarte sélectionnée n°1 : "+this.getBoard().getGrids()[line1][col1].getValue()+"\n");
+			this.getBoard().getGrids()[line2][col2].setSide(true);
+			System.out.println("\nCarte sélectionnée n°2 : "+this.getBoard().getGrids()[line2][col2].getValue()+"\n");
+			
+			
+			if(!this.getBoard().checkCards(line1, col1, line2, col2)){
+				this.getBoard().getGrids()[line1][col1].setSide(false);
+				this.getBoard().getGrids()[line2][col2].setSide(false);
+				System.out.println("\nCartes différentes\n");
+			}
+			
+				
+		}
 
+	}
+	/**
+	 * Return a board
+	 * @return board
+	 */
+	public Board getBoard()
+	{
+		return this.board;
+	}
+	/** Return a timer
+	 * @return timer
+	 */
+	public Timer getTime(){
+		return this.timer;
 	}
 
 }
