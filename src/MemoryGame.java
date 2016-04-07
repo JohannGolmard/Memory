@@ -18,10 +18,9 @@ public class MemoryGame
 	 */
 	private Board board;
 	
-	/**
-	 *  A timer
-	 */
-	private Timer timer;
+
+	private long starttimer;
+	private long endtimer;
 
 	/**
 	 * Creates a new Memory game, with a standard board initiate by a size
@@ -34,7 +33,8 @@ public class MemoryGame
 		// TODO do not use javadoc style comment inside code(done)
 	
 			this.board = new Board(size);
-			this.timer= new Timer();
+			this.starttimer=System.currentTimeMillis();
+			this.endtimer=0;
 	}
 
 	/**
@@ -69,6 +69,7 @@ public class MemoryGame
 			
 				
 		}
+		this.getTime();
 
 	}
 	/**
@@ -82,8 +83,11 @@ public class MemoryGame
 	/** Return a timer
 	 * @return timer
 	 */
-	public Timer getTime(){
-		return this.timer;
+	public long getTime(){
+		this.endtimer=System.currentTimeMillis();
+		return this.endtimer=(this.endtimer-this.starttimer)/1000 % 60;
+		
+		
 	}
 
 }
