@@ -19,7 +19,13 @@ public class MemoryGame
 	private Board board;
 	
 
+	/**
+	 * A timer sets when the game start
+	 */
 	private long starttimer;
+	/**
+	 * A timer sets when the game end
+	 */
 	private long endtimer;
 
 	/**
@@ -84,8 +90,15 @@ public class MemoryGame
 	 * @return timer
 	 */
 	public long getTime(){
+		long min;
+		long sec;
+		
 		this.endtimer=System.currentTimeMillis();
-		return this.endtimer=(this.endtimer-this.starttimer)/1000 % 60;
+		min=(this.endtimer-this.starttimer)/1000 / 60;
+		sec=(this.endtimer-this.starttimer)/1000 % 60;
+		
+		return min & sec;
+				
 		
 		
 	}

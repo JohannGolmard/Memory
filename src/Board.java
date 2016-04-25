@@ -12,7 +12,7 @@ public class Board
 	/**
 	 * A 2D grid of card
 	 */
-	private Card grids[][];
+	private Card[][] grids;
 
 	// TODO write comment(done)
 	/**
@@ -69,9 +69,9 @@ public class Board
 	 * @return boolean , false if the board isn't finish or true 
 	 */
 	public boolean getEndOfBoard(){
-		for(int i=0;i<this.getGrids().length;i++){
-			for(int j=0;j<this.getGrids()[i].length;j++){
-				if(!this.getGrids()[i][j].getSide())
+		for(int i=0;i<this.grids.length;i++){
+			for(int j=0;j<this.grids[i].length;j++){
+				if(!this.grids[i][j].getSide())
 					return false;
 			}
 		}
@@ -93,4 +93,17 @@ public class Board
 			return false;
 			
 	}
+	/**
+	 * returns a string with all the values in the board grid
+	 */
+	public String toString(){
+		String  s="";
+		for(int i=0;i<this.grids.length;i++){
+			for(int j=0;j<this.grids[i].length;j++){
+				s=s +" "+ this.grids[i][j].toString();		
+				
+			}
+		}
+		return s;
+}
 }

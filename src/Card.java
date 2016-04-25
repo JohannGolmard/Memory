@@ -53,5 +53,12 @@ public class Card
 	public void setSide(boolean otherSide){
 		this.side=otherSide;
 	}
+	/**
+	 * returns
+	 */
+	public String toString(){
+		
+		return ""+this.value;
+	}
 
 }
