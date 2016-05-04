@@ -14,12 +14,12 @@ public class Memory
 	{	
 		try
 		{
-			new MemoryGame(4).play();
+			System.out.println(new MemoryGame(4).getBoard().toString());
 		}
 		catch (InvalidSizeException e)
 		{
 			// TODO Auto-generated catch block
-			// ...
+			e.printStackTrace();
 		}
 				
 	}

@@ -20,6 +20,10 @@ public class Card
 	 * The side of the card
 	 */
 	private boolean side;
+	/**
+	 * The button of the card represented on the player screen.
+	 */
+	private Button button;
 	
 	
 	// TODO write comment(done)
@@ -30,6 +34,7 @@ public class Card
 	{
 		this.value = nbr;
 		this.side = DEFAULT_SIDE;
+		this.button= new Button();
 	}
 
 	// TODO write comment(done)
@@ -54,11 +59,13 @@ public class Card
 		this.side=otherSide;
 	}
 	/**
-	 * returns
+	 * return a string with the value and the side of a card
 	 */
 	public String toString(){
-		
-		return ""+this.value;
+		if(this.getSide())
+			return " $"+this.value+"$ ";
+		else
+			return " X"+this.value+"X ";
 	}
 
 }

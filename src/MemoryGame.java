@@ -27,12 +27,13 @@ public class MemoryGame
 	 * A timer sets when the game end
 	 */
 	private long endtimer;
+	
+	private Panel pan;
 
 	/**
 	 * Creates a new Memory game, with a standard board initiate by a size
 	 * @param size , the size of the board
-	 * @throws InvalidSizeException 
-	 * 
+	 * @throws InvalidSizeException 	 * 
 	 */
 	public MemoryGame(int size) throws InvalidSizeException
 	{
@@ -45,6 +46,13 @@ public class MemoryGame
 
 	/**
 	 * play is a method which represents a game being played by the user.
+	 * 
+	 * while( game hasn't finish)
+	 * 		ask the player for 2 positions of card
+	 * 		if( card = visible)
+	 * 		return the side and display the value of each card
+	 * 		if( not same value )
+	 * 
 	 */
 	public void play()
 	{
@@ -52,14 +60,15 @@ public class MemoryGame
 		
 		while(!this.getBoard().getEndOfBoard()){
 			Scanner sc1 = new Scanner(System.in);
-			Scanner sc2 = new Scanner(System.in);
-			Scanner sc3 = new Scanner(System.in);
-			Scanner sc4 = new Scanner(System.in);
-			
+						
 			int line1 = sc1.nextInt();
-			int col1 = sc2.nextInt();
-			int line2 = sc3.nextInt();
-			int col2 = sc4.nextInt();
+			int col1 = sc1.nextInt();
+			int line2 = sc1.nextInt();
+			int col2 = sc1.nextInt();
+			
+			sc1.close();
+			
+			System.out.println(this.getBoard().toString());
 			
 			this.getBoard().getGrids()[line1][col1].setSide(true);
 			System.out.println("\nCarte sélectionnée n°1 : "+this.getBoard().getGrids()[line1][col1].getValue()+"\n");
@@ -98,8 +107,6 @@ public class MemoryGame
 		sec=(this.endtimer-this.starttimer)/1000 % 60;
 		
 		return min & sec;
-				
-		
 		
 	}
 
