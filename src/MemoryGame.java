@@ -28,6 +28,7 @@ public class MemoryGame
 	 */
 	private long endtimer;
 	
+	// TODO remove GUI objects for now
 	private Panel pan;
 
 	/**
@@ -37,8 +38,6 @@ public class MemoryGame
 	 */
 	public MemoryGame(int size) throws InvalidSizeException
 	{
-		// TODO do not use javadoc style comment inside code(done)
-	
 			this.board = new Board(size);
 			this.starttimer=System.currentTimeMillis();
 			this.endtimer=0;
@@ -56,11 +55,11 @@ public class MemoryGame
 	 */
 	public void play()
 	{
-		// TODO write code
 		
 		while(!this.getBoard().getEndOfBoard()){
 			Scanner sc1 = new Scanner(System.in);
-						
+			
+			// TODO mov this code elsewhere more relevant
 			int line1 = sc1.nextInt();
 			int col1 = sc1.nextInt();
 			int line2 = sc1.nextInt();
@@ -87,6 +86,7 @@ public class MemoryGame
 		this.getTime();
 
 	}
+	
 	/**
 	 * Return a board
 	 * @return board
@@ -95,6 +95,7 @@ public class MemoryGame
 	{
 		return this.board;
 	}
+	
 	/** Return a timer
 	 * @return timer
 	 */

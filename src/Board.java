@@ -1,6 +1,5 @@
 import java.util.Random;
 
-// TODO write comment(done)
 /**
  * This class represents a board of the Memory game. The board is filled with
  * cards.
@@ -10,13 +9,11 @@ import java.util.Random;
  */
 public class Board
 {
-	// TODO write comment(done)
 	/**
 	 * A 2D grid of card
 	 */
 	private Card[][] grids;
 
-	// TODO write comment(done)
 	/**
 	 * Creates a new Board with randomly placed cards on the hidden side.
 	 * 

@@ -11,7 +11,7 @@ public class Card
 	 * The default side of a card. False represents the hidden side of a card.
 	 */
 	public static final boolean DEFAULT_SIDE = false;
-	// TODO write comment(done)
+	
 	/**
 	 * The value of the card
 	 */
@@ -20,13 +20,15 @@ public class Card
 	 * The side of the card
 	 */
 	private boolean side;
+	
+	// TODO remove GUI objects for now 
+	// anyway, a button can not be part of a card
 	/**
 	 * The button of the card represented on the player screen.
 	 */
 	private Button button;
 	
 	
-	// TODO write comment(done)
 	/** Creates a new Card with a value and a side initiate by default.
 	 * @param nbr
 	 */
@@ -37,7 +39,6 @@ public class Card
 		this.button= new Button();
 	}
 
-	// TODO write comment(done)
 	/** Return the value of the card
 	 * @return value
 	 */
