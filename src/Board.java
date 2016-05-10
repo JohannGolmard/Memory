@@ -103,10 +103,17 @@ public class Board
 	public boolean checkCards(int line, int col, int line2, int col2)
 	{
 		if (this.getGrids()[line][col].getValue() == this.getGrids()[line2][col2].getValue())
+				return true;
+		else
+				return false;
+
+	}
+	public boolean isVisible(int line,int col){
+		if(this.grids[line][col].getSide())
 			return true;
 		else
 			return false;
-
+				
 	}
 
 	/**

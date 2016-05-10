@@ -14,7 +14,7 @@ public class Memory
 	{	
 		try
 		{
-			System.out.println(new MemoryGame(4).getBoard().toString());
+			new MemoryGame(2).play();
 		}
 		catch (InvalidSizeException e)
 		{

@@ -18,7 +18,6 @@ public class MemoryGame
 	 */
 	private Board board;
 	
-
 	/**
 	 * A timer sets when the game start
 	 */
@@ -28,8 +27,6 @@ public class MemoryGame
 	 */
 	private long endtimer;
 	
-	// TODO remove GUI objects for now
-	private Panel pan;
 
 	/**
 	 * Creates a new Memory game, with a standard board initiate by a size
@@ -47,54 +44,56 @@ public class MemoryGame
 	 * play is a method which represents a game being played by the user.
 	 * 
 	 * while( game hasn't finish)
-	 * 		ask the player for 2 positions of card
-	 * 		if( card = visible)
-	 * 		return the side and display the value of each card
-	 * 		if( not same value )
-	 * 
+	 *      do
+	 *      {
+	 * 			ask the player for 2 positions of card
+	 *		}
+	 *		while (card selection is not valid)
+	 * 		if( card != visible)
+	 * 			return the side and display the value of each card
+	 * 			if( not same value ) 
+	 * 				return the side of each card to the hidden side
+	 * 				return to the player that the cards are not the same
+	 * 			else
+	 * 				left the card to the visible side
 	 */
 	public void play()
 	{
 		
-		while(!this.getBoard().getEndOfBoard()){
-			Scanner sc1 = new Scanner(System.in);
+		while(!this.board.getEndOfBoard()){
+			//TODO rajouter ce qui manque
 			
-			// TODO mov this code elsewhere more relevant
-			int line1 = sc1.nextInt();
-			int col1 = sc1.nextInt();
-			int line2 = sc1.nextInt();
-			int col2 = sc1.nextInt();
+			Position position1 = new Position(this.board.getGrids().length);
+			Position position2 = new Position(this.board.getGrids().length);
 			
-			sc1.close();
+			System.out.println(position1.toString());
+			System.out.println(position2.toString());
+
+			if(this.board.isVisible(position1.getRow(),position1.getColumn())){
+				if(this.board.isVisible(position2.getRow(), position2.getColumn())){
+					if(!position1.checkPosition(position2)){
 			
-			System.out.println(this.getBoard().toString());
+						this.board.getGrids()[position1.getRow()][position1.getColumn()].setSide(true);
+						System.out.println("\nCarte sélectionnée n°1 : "+this.board.getGrids()[position1.getRow()][position1.getColumn()].getValue()+"\n");
+						this.board.getGrids()[position2.getRow()][position2.getColumn()].setSide(true);
+						System.out.println("\nCarte sélectionnée n°2 : "+this.board.getGrids()[position2.getRow()][position1.getColumn()].getValue()+ "\n");
 			
-			this.getBoard().getGrids()[line1][col1].setSide(true);
-			System.out.println("\nCarte sélectionnée n°1 : "+this.getBoard().getGrids()[line1][col1].getValue()+"\n");
-			this.getBoard().getGrids()[line2][col2].setSide(true);
-			System.out.println("\nCarte sélectionnée n°2 : "+this.getBoard().getGrids()[line2][col2].getValue()+"\n");
-			
-			
-			if(!this.getBoard().checkCards(line1, col1, line2, col2)){
-				this.getBoard().getGrids()[line1][col1].setSide(false);
-				this.getBoard().getGrids()[line2][col2].setSide(false);
-				System.out.println("\nCartes différentes\n");
+						if(this.board.checkCards(position1.getRow(), position1.getColumn(), position2.getRow(), position2.getColumn())){
+							this.board.getGrids()[position1.getRow()][position1.getColumn()].setSide(false);
+							this.board.getGrids()[position2.getRow()][position2.getColumn()].setSide(false);
+							System.out.println("\nCartes différentes\n");
 			}
 			
-				
 		}
+		}
+		}
+			System.out.println(this.board.toString());
+	}
 		this.getTime();
 
 	}
 	
-	/**
-	 * Return a board
-	 * @return board
-	 */
-	public Board getBoard()
-	{
-		return this.board;
-	}
+	
 	
 	/** Return a timer
 	 * @return timer

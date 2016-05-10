@@ -20,15 +20,7 @@ public class Card
 	 * The side of the card
 	 */
 	private boolean side;
-	
-	// TODO remove GUI objects for now 
-	// anyway, a button can not be part of a card
-	/**
-	 * The button of the card represented on the player screen.
-	 */
-	private Button button;
-	
-	
+		
 	/** Creates a new Card with a value and a side initiate by default.
 	 * @param nbr
 	 */
@@ -36,7 +28,7 @@ public class Card
 	{
 		this.value = nbr;
 		this.side = DEFAULT_SIDE;
-		this.button= new Button();
+		
 	}
 
 	/** Return the value of the card
