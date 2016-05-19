@@ -5,12 +5,12 @@ import java.util.Random;
  * @author golmardj
  *
  */
-public class Position
+public class PositionRandom
 {
 	private int row;
 	private int column;
 	
-	public Position(int index){
+	public PositionRandom(int index){
 		Random rand = new Random();
 		
 		this.row = rand.nextInt(index);
@@ -22,7 +22,7 @@ public class Position
 	public int getColumn(){
 		return this.column;
 	}
-	public boolean checkPosition(Position pos2){
+	public boolean checkPosition(PositionRandom pos2){
 		if(this.row == pos2.row && this.column == pos2.column)
 			return true;
 		else

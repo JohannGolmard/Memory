@@ -20,14 +20,19 @@ public class Card
 	 * The side of the card
 	 */
 	private boolean side;
+	/**
+	 *  The representation of the card on a graphical grid
+	 */
+	private Button but;
 		
-	/** Creates a new Card with a value and a side initiate by default.
+	/** Creates a new Card with a value, a side initiate by default and a Button.
 	 * @param nbr
 	 */
 	public Card(int nbr)
 	{
 		this.value = nbr;
 		this.side = DEFAULT_SIDE;
+		this.but= new Button();
 		
 	}
 
@@ -59,6 +64,14 @@ public class Card
 			return " $"+this.value+"$ ";
 		else
 			return " X"+this.value+"X ";
+	}
+	/**
+	 * Return the reference of the button
+	 * @return a button
+	 */
+	public Button getBut()
+	{
+		return this.but;
 	}
 
 }

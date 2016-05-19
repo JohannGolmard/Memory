@@ -12,9 +12,12 @@ public class Memory
 	 */
 	public static void main(String[] args)
 	{	
-		try
+	
+		//Window test = new Window();
+			try
 		{
 			new MemoryGame(2).play();
+			
 		}
 		catch (InvalidSizeException e)
 		{

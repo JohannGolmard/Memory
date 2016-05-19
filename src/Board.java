@@ -90,26 +90,28 @@ public class Board
 	/**
 	 * Check the value of two cards and return if they are equals
 	 * 
-	 * @param line
-	 *            , index of line for the first card
-	 * @param col
-	 *            , index of column for the first card
-	 * @param line2
-	 *            , index of line for the second card
-	 * @param col2
-	 *            , index of column for the second card
+	 * @param pos1
+	 *            Position of one card
+	 * @param pos2
+	 *            Position of another card
+	 * 
 	 * @return boolean
 	 */
-	public boolean checkCards(int line, int col, int line2, int col2)
+	public boolean checkCards(PositionAsked pos1,PositionAsked pos2)
 	{
-		if (this.getGrids()[line][col].getValue() == this.getGrids()[line2][col2].getValue())
+		if (this.getGrids()[pos1.getRow()][pos1.getColumn()].getValue() == this.getGrids()[pos2.getRow()][pos2.getColumn()].getValue())
 				return true;
 		else
 				return false;
 
 	}
-	public boolean isVisible(int line,int col){
-		if(this.grids[line][col].getSide())
+	/**
+	 * Check a card if it's visible
+	 * @param pos1
+	 * @return a boolean
+	 */
+	public boolean isVisible(PositionAsked pos1){
+		if(this.grids[pos1.getRow()][pos1.getColumn()].getSide())
 			return true;
 		else
 			return false;
@@ -126,7 +128,7 @@ public class Board
 		{
 			for (int j = 0; j < this.grids[i].length; j++)
 			{
-				s = s + " " + this.grids[j][i].toString();
+				s = s + " " + this.grids[i][j].toString();
 
 			}
 			s = s + "\n";

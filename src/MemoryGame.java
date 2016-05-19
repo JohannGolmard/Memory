@@ -1,6 +1,3 @@
-import java.util.Scanner;
-
-
 /**
  * This class represents a Memory game. MemoryGame is a game from Memory which
  * is ready to play, the cards was placed on a grid, on the hidden side. The
@@ -63,22 +60,24 @@ public class MemoryGame
 		while(!this.board.getEndOfBoard()){
 			//TODO rajouter ce qui manque
 			
-			Position position1 = new Position(this.board.getGrids().length);
-			Position position2 = new Position(this.board.getGrids().length);
+		//	PositionRandom position1 = new PositionRandom(this.board.getGrids().length);
+		//	PositionRandom position2 = new PositionRandom(this.board.getGrids().length);
+			PositionAsked position1 = new PositionAsked();
+			PositionAsked position2 = new PositionAsked();
 			
 			System.out.println(position1.toString());
 			System.out.println(position2.toString());
-
-			if(this.board.isVisible(position1.getRow(),position1.getColumn())){
-				if(this.board.isVisible(position2.getRow(), position2.getColumn())){
-					if(!position1.checkPosition(position2)){
+			if(!position1.checkPosition(position2)){
+				if(!this.board.isVisible(position1)){
+					if(!this.board.isVisible(position2)){
+					
 			
 						this.board.getGrids()[position1.getRow()][position1.getColumn()].setSide(true);
 						System.out.println("\nCarte sélectionnée n°1 : "+this.board.getGrids()[position1.getRow()][position1.getColumn()].getValue()+"\n");
 						this.board.getGrids()[position2.getRow()][position2.getColumn()].setSide(true);
 						System.out.println("\nCarte sélectionnée n°2 : "+this.board.getGrids()[position2.getRow()][position1.getColumn()].getValue()+ "\n");
 			
-						if(this.board.checkCards(position1.getRow(), position1.getColumn(), position2.getRow(), position2.getColumn())){
+						if(!this.board.checkCards(position1, position2)){
 							this.board.getGrids()[position1.getRow()][position1.getColumn()].setSide(false);
 							this.board.getGrids()[position2.getRow()][position2.getColumn()].setSide(false);
 							System.out.println("\nCartes différentes\n");
