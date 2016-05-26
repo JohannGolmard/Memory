@@ -97,7 +97,7 @@ public class Board
 	 * 
 	 * @return boolean
 	 */
-	public boolean checkCards(PositionAsked pos1,PositionAsked pos2)
+	public boolean checkCards(Position pos1,Position pos2)
 	{
 		if (this.getGrids()[pos1.getRow()][pos1.getColumn()].getValue() == this.getGrids()[pos2.getRow()][pos2.getColumn()].getValue())
 				return true;
@@ -110,7 +110,7 @@ public class Board
 	 * @param pos1
 	 * @return a boolean
 	 */
-	public boolean isVisible(PositionAsked pos1){
+	public boolean isVisible(Position pos1){
 		if(this.grids[pos1.getRow()][pos1.getColumn()].getSide())
 			return true;
 		else

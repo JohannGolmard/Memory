@@ -58,28 +58,28 @@ public class MemoryGame
 	{
 		
 		while(!this.board.getEndOfBoard()){
-			//TODO rajouter ce qui manque
 			
-		//	PositionRandom position1 = new PositionRandom(this.board.getGrids().length);
-		//	PositionRandom position2 = new PositionRandom(this.board.getGrids().length);
-			PositionAsked position1 = new PositionAsked();
-			PositionAsked position2 = new PositionAsked();
 			
-			System.out.println(position1.toString());
-			System.out.println(position2.toString());
-			if(!position1.checkPosition(position2)){
-				if(!this.board.isVisible(position1)){
-					if(!this.board.isVisible(position2)){
+		//	RandomAccess pa = new RandomAccess(this.board.getGrids().length);
+		//	RandomAccess pa2 = new RandomAccess(this.board.getGrids().length);
+			PlayerAccess pa = new PlayerAccess();
+			PlayerAccess pa2 = new PlayerAccess();
+			
+			System.out.println(pa.askPosition().toString());
+			System.out.println(pa2.askPosition().toString());
+			if(!pa.askPosition().checkPosition(pa2.askPosition())){
+				if(!this.board.isVisible(pa.askPosition())){
+					if(!this.board.isVisible(pa2.askPosition())){
 					
 			
-						this.board.getGrids()[position1.getRow()][position1.getColumn()].setSide(true);
-						System.out.println("\nCarte sélectionnée n°1 : "+this.board.getGrids()[position1.getRow()][position1.getColumn()].getValue()+"\n");
-						this.board.getGrids()[position2.getRow()][position2.getColumn()].setSide(true);
-						System.out.println("\nCarte sélectionnée n°2 : "+this.board.getGrids()[position2.getRow()][position1.getColumn()].getValue()+ "\n");
+						this.board.getGrids()[pa.askPosition().getRow()][pa.askPosition().getColumn()].setSide(true);
+						System.out.println("\nCarte sélectionnée n°1 : "+this.board.getGrids()[pa.askPosition().getRow()][pa.askPosition().getColumn()].getValue()+"\n");
+						this.board.getGrids()[pa2.askPosition().getRow()][pa2.askPosition().getColumn()].setSide(true);
+						System.out.println("\nCarte sélectionnée n°2 : "+this.board.getGrids()[pa2.askPosition().getRow()][pa.askPosition().getColumn()].getValue()+ "\n");
 			
-						if(!this.board.checkCards(position1, position2)){
-							this.board.getGrids()[position1.getRow()][position1.getColumn()].setSide(false);
-							this.board.getGrids()[position2.getRow()][position2.getColumn()].setSide(false);
+						if(!this.board.checkCards(pa.askPosition(), pa2.askPosition())){
+							this.board.getGrids()[pa.askPosition().getRow()][pa.askPosition().getColumn()].setSide(false);
+							this.board.getGrids()[pa2.askPosition().getRow()][pa2.askPosition().getColumn()].setSide(false);
 							System.out.println("\nCartes différentes\n");
 			}
 			
